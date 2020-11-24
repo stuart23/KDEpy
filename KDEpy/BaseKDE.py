@@ -222,6 +222,11 @@ class BaseKDE(ABC):
         return self.evaluate(*args, **kwargs)
 
 
+    def test_kernel_name():
+        k = NaiveKDE(kernel="gaussian")
+        assert str(k.kernel) == 'gaussian kernel'
+
+
 if __name__ == "__main__":
     import pytest
 
