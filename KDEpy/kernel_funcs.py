@@ -258,6 +258,9 @@ class Kernel(collections.abc.Callable):
         # corresponds to the support of the function when it is scaled to have
         # unit variance.
         self.support = support / np.sqrt(self.var)
+        
+    def __repr__(self):
+        return '{} kernel'.format(self.function.__name__)
 
     def practical_support(self, bw, atol=10e-5):
         """
